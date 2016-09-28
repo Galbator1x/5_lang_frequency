@@ -20,7 +20,7 @@ def get_most_frequent_words(text):
 
 
 if __name__ == '__main__':
-    filepath = input('Введите путь до файла: ')
+    filepath = input('Enter the path to the file: ')
     words_dict = get_most_frequent_words(load_data(filepath))
-    print('Самые частые слова')
+    print('Most frequent words')
     [print('{}: {}'.format(key, str(value))) for key, value in words_dict]
