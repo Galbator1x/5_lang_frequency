@@ -5,8 +5,7 @@ import operator
 
 def load_data(filepath):
     if not os.path.exists(filepath):
-        print('File does not exists.')
-        exit()
+        return None
     with open(filepath) as file_handler:
         return file_handler.read()
 
@@ -22,6 +21,10 @@ def get_most_frequent_words(text):
 
 if __name__ == '__main__':
     filepath = input('Enter the path to the file: ')
-    words_dict = get_most_frequent_words(load_data(filepath))
+    data = load_data(filepath)
+    if data is None:
+        print('File does not exists.')
+        exit()
+    words_dict = get_most_frequent_words(data)
     print('Most frequent words')
     [print('{}: {}'.format(key, str(value))) for key, value in words_dict]
