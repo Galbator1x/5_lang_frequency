@@ -22,7 +22,7 @@ Most frequent words
 его: 825
 ```
 
-Reruirements
+Requirements
 ------------
 
 - Python >= 3.4
